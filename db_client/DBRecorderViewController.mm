@@ -36,6 +36,8 @@
     
     _recognizer = [[USCRecognizer alloc] initWithAppKey:@"37x3hynayllfqtzhyo3gvc5z7lqydylo2gpfk4qt"];
     _recognizer.delegate = self;
+    
+    [DBRecorderViewController openSpeaker:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,5 +115,51 @@
 {
     self.data = recordingDatas;
 }
+
++ (void)openSpeaker:(bool)bOpen {
+    UInt32 route;
+	OSStatus error;
+    UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;    // 1
+	
+	error = AudioSessionSetProperty (
+                                     kAudioSessionProperty_AudioCategory,                        // 2
+                                     sizeof (sessionCategory),                                   // 3
+                                     &sessionCategory                                            // 4
+                                     );
+	
+	route = bOpen?kAudioSessionOverrideAudioRoute_Speaker:kAudioSessionOverrideAudioRoute_None;
+	error = AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(route), &route);
+    
+	if(error == kAudioSessionNotInitialized)
+	{
+		NSLog(@"not init");
+	}
+	else if(kAudioSessionAlreadyInitialized)
+	{
+		NSLog(@"not init");
+	}
+	else if(kAudioSessionInitializationError)
+	{
+		NSLog(@"not init");
+	}
+	else if(kAudioSessionUnsupportedPropertyError)
+	{
+		NSLog(@"not init");
+	}
+	else if(kAudioSessionBadPropertySizeError)
+	{
+		NSLog(@"not init");
+	}
+	else if(kAudioSessionBadPropertySizeError)
+	{
+		NSLog(@"not init");
+	}
+	
+	if(error!=kAudioServicesNoError)
+	{
+		NSLog(@"error");
+	}
+}
+
 
 @end
