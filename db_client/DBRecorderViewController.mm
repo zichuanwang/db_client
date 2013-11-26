@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 @end
 
@@ -65,6 +66,7 @@
   if (result) {
     // upload user data error
     NSLog(@"%@", result);
+    self.resultLabel.text = result;
   }else{
     // upload user data success
     NSLog(@"Succeeded!");
