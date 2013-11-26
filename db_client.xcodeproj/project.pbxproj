@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1834BF111844708200A50A77 /* DBRecorderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1834BF101844708200A50A77 /* DBRecorderViewController.mm */; };
+		1834BF13184472A300A50A77 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834BF12184472A300A50A77 /* AVFoundation.framework */; };
+		1834BF1718447A3700A50A77 /* libusc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834BF1518447A3700A50A77 /* libusc.a */; };
+		1834BF1918447D8D00A50A77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834BF1818447D8D00A50A77 /* AudioToolbox.framework */; };
+		1834BF1B1844855000A50A77 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834BF1A1844855000A50A77 /* SystemConfiguration.framework */; };
+		1834BF1D1844855900A50A77 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834BF1C1844855900A50A77 /* CoreTelephony.framework */; };
 		E138A96718445D2900332D2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E138A96618445D2900332D2E /* Foundation.framework */; };
 		E138A96918445D2900332D2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E138A96818445D2900332D2E /* CoreGraphics.framework */; };
 		E138A96B18445D2900332D2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E138A96A18445D2900332D2E /* UIKit.framework */; };
@@ -14,7 +20,6 @@
 		E138A97318445D2900332D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E138A97218445D2900332D2E /* main.m */; };
 		E138A97718445D2900332D2E /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E138A97618445D2900332D2E /* DBAppDelegate.m */; };
 		E138A97A18445D2900332D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E138A97818445D2900332D2E /* Main.storyboard */; };
-		E138A97D18445D2900332D2E /* DBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E138A97C18445D2900332D2E /* DBViewController.m */; };
 		E138A97F18445D2900332D2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E138A97E18445D2900332D2E /* Images.xcassets */; };
 		E138A98618445D2900332D2E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E138A98518445D2900332D2E /* XCTest.framework */; };
 		E138A98718445D2900332D2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E138A96618445D2900332D2E /* Foundation.framework */; };
@@ -35,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1834BF0F1844708200A50A77 /* DBRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBRecorderViewController.h; sourceTree = "<group>"; };
+		1834BF101844708200A50A77 /* DBRecorderViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DBRecorderViewController.mm; sourceTree = "<group>"; };
+		1834BF12184472A300A50A77 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1834BF1518447A3700A50A77 /* libusc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libusc.a; sourceTree = "<group>"; };
+		1834BF1618447A3700A50A77 /* USCRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCRecognizer.h; sourceTree = "<group>"; };
+		1834BF1818447D8D00A50A77 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1834BF1A1844855000A50A77 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1834BF1C1844855900A50A77 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		E138A96318445D2900332D2E /* db_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = db_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E138A96618445D2900332D2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E138A96818445D2900332D2E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,8 +59,6 @@
 		E138A97518445D2900332D2E /* DBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBAppDelegate.h; sourceTree = "<group>"; };
 		E138A97618445D2900332D2E /* DBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBAppDelegate.m; sourceTree = "<group>"; };
 		E138A97918445D2900332D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E138A97B18445D2900332D2E /* DBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBViewController.h; sourceTree = "<group>"; };
-		E138A97C18445D2900332D2E /* DBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBViewController.m; sourceTree = "<group>"; };
 		E138A97E18445D2900332D2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E138A98418445D2900332D2E /* db_clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = db_clientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E138A98518445D2900332D2E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,8 +74,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1834BF1D1844855900A50A77 /* CoreTelephony.framework in Frameworks */,
+				1834BF1B1844855000A50A77 /* SystemConfiguration.framework in Frameworks */,
+				1834BF1918447D8D00A50A77 /* AudioToolbox.framework in Frameworks */,
+				1834BF13184472A300A50A77 /* AVFoundation.framework in Frameworks */,
 				E138A96918445D2900332D2E /* CoreGraphics.framework in Frameworks */,
 				E138A96B18445D2900332D2E /* UIKit.framework in Frameworks */,
+				1834BF1718447A3700A50A77 /* libusc.a in Frameworks */,
 				E138A96718445D2900332D2E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,9 +98,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1834BF1418447A3700A50A77 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				1834BF1518447A3700A50A77 /* libusc.a */,
+				1834BF1618447A3700A50A77 /* USCRecognizer.h */,
+			);
+			path = libs;
+			sourceTree = SOURCE_ROOT;
+		};
 		E138A95A18445D2800332D2E = {
 			isa = PBXGroup;
 			children = (
+				1834BF1418447A3700A50A77 /* libs */,
 				E138A96C18445D2900332D2E /* db_client */,
 				E138A98B18445D2900332D2E /* db_clientTests */,
 				E138A96518445D2900332D2E /* Frameworks */,
@@ -104,6 +130,10 @@
 		E138A96518445D2900332D2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1834BF1C1844855900A50A77 /* CoreTelephony.framework */,
+				1834BF1A1844855000A50A77 /* SystemConfiguration.framework */,
+				1834BF1818447D8D00A50A77 /* AudioToolbox.framework */,
+				1834BF12184472A300A50A77 /* AVFoundation.framework */,
 				E138A96618445D2900332D2E /* Foundation.framework */,
 				E138A96818445D2900332D2E /* CoreGraphics.framework */,
 				E138A96A18445D2900332D2E /* UIKit.framework */,
@@ -117,9 +147,9 @@
 			children = (
 				E138A97518445D2900332D2E /* DBAppDelegate.h */,
 				E138A97618445D2900332D2E /* DBAppDelegate.m */,
+				1834BF0F1844708200A50A77 /* DBRecorderViewController.h */,
+				1834BF101844708200A50A77 /* DBRecorderViewController.mm */,
 				E138A97818445D2900332D2E /* Main.storyboard */,
-				E138A97B18445D2900332D2E /* DBViewController.h */,
-				E138A97C18445D2900332D2E /* DBViewController.m */,
 				E138A97E18445D2900332D2E /* Images.xcassets */,
 				E138A96D18445D2900332D2E /* Supporting Files */,
 				E138A99B1844655D00332D2E /* DBRootTabBarController.h */,
@@ -255,9 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1834BF111844708200A50A77 /* DBRecorderViewController.mm in Sources */,
 				E138A97718445D2900332D2E /* DBAppDelegate.m in Sources */,
 				E138A99D1844655D00332D2E /* DBRootTabBarController.m in Sources */,
-				E138A97D18445D2900332D2E /* DBViewController.m in Sources */,
 				E138A97318445D2900332D2E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,9 +415,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "db_client/db_client-Prefix.pch";
 				INFOPLIST_FILE = "db_client/db_client-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					./libs/,
+					"/Users/GabrielYeah/项目/Projects/db_client/libs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -398,9 +434,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "db_client/db_client-Prefix.pch";
 				INFOPLIST_FILE = "db_client/db_client-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					./libs/,
+					"/Users/GabrielYeah/项目/Projects/db_client/libs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,6 +509,7 @@
 				E138A99718445D2900332D2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E138A99818445D2900332D2E /* Build configuration list for PBXNativeTarget "db_clientTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +518,7 @@
 				E138A99A18445D2900332D2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

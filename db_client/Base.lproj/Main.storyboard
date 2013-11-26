@@ -10,7 +10,7 @@
                 <tabBarController definesPresentationContext="YES" id="gSf-Go-Som" customClass="DBRootTabBarController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" hidden="YES" contentMode="scaleToFill" id="Ell-ft-OPL">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="326" y="717"/>
         </scene>
-        <!--View Controller-->
+        <!--Recorder View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="DBViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DBRecorderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Dx-ax-gCY"/>
                         <viewControllerLayoutGuide type="bottom" id="M3K-G7-QMs"/>
@@ -66,6 +66,29 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ih-H4-aut">
+                                <rect key="frame" x="123" y="235" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didEndTouchRecordButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8pW-Bb-NOJ"/>
+                                    <action selector="didTouchRecordButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="h6u-P5-jmU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-cC-AwD">
+                                <rect key="frame" x="139" y="309" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didClickPlayButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vAX-js-gTM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="7dr-xN-Iem">
@@ -81,10 +104,14 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="playButton" destination="vbQ-cC-AwD" id="AP2-Ls-fnN"/>
+                        <outlet property="recordButton" destination="9Ih-H4-aut" id="4zQ-HI-4bx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="-71"/>
+            <point key="canvasLocation" x="350" y="-72"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="8AF-zu-eAZ">
