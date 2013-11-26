@@ -38,6 +38,7 @@
 		E138A99218445D2900332D2E /* db_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E138A99118445D2900332D2E /* db_clientTests.m */; };
 		E138A99D1844655D00332D2E /* DBRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E138A99C1844655D00332D2E /* DBRootTabBarController.m */; };
 		E15192061844C1ED00B6E8AD /* DBNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E15192051844C1ED00B6E8AD /* DBNetworkManager.m */; };
+		E15192091844FAB500B6E8AD /* DBQueryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E15192081844FAB500B6E8AD /* DBQueryTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		E138A99C1844655D00332D2E /* DBRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRootTabBarController.m; sourceTree = "<group>"; };
 		E15192041844C1ED00B6E8AD /* DBNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBNetworkManager.h; sourceTree = "<group>"; };
 		E15192051844C1ED00B6E8AD /* DBNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBNetworkManager.m; sourceTree = "<group>"; };
+		E15192071844FAB500B6E8AD /* DBQueryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBQueryTableViewController.h; sourceTree = "<group>"; };
+		E15192081844FAB500B6E8AD /* DBQueryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBQueryTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +222,8 @@
 				E105520C1844AAD700D00BD4 /* pcmplayer.h */,
 				E15192041844C1ED00B6E8AD /* DBNetworkManager.h */,
 				E15192051844C1ED00B6E8AD /* DBNetworkManager.m */,
+				E15192071844FAB500B6E8AD /* DBQueryTableViewController.h */,
+				E15192081844FAB500B6E8AD /* DBQueryTableViewController.m */,
 			);
 			path = db_client;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				E138A99D1844655D00332D2E /* DBRootTabBarController.m in Sources */,
 				E105520518449AE200D00BD4 /* AFURLRequestSerialization.m in Sources */,
 				E105520118449AE200D00BD4 /* AFHTTPSessionManager.m in Sources */,
+				E15192091844FAB500B6E8AD /* DBQueryTableViewController.m in Sources */,
 				E105520D1844AAD700D00BD4 /* pcmplayer.cpp in Sources */,
 				E105520218449AE200D00BD4 /* AFNetworkReachabilityManager.m in Sources */,
 				E105520618449AE200D00BD4 /* AFURLResponseSerialization.m in Sources */,

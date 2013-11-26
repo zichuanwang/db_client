@@ -26,35 +26,48 @@
             </objects>
             <point key="canvasLocation" x="-674" y="406"/>
         </scene>
-        <!--View Controller - Item 2-->
-        <scene sceneID="rQa-ZL-9bf">
+        <!--Query Table View Controller-->
+        <scene sceneID="AYV-aC-Cca">
             <objects>
-                <viewController id="z9v-8W-7jh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Jx-nD-tUS"/>
-                        <viewControllerLayoutGuide type="bottom" id="tbl-Zb-faS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dOH-aD-0IA">
+                <tableViewController id="1GH-xI-zpX" customClass="DBQueryTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7Wx-8F-asW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="kgK-T1-K08"/>
-                    <navigationItem key="navigationItem" id="VG9-ZR-8Yr">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Cm3-eq-Wsk">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cm3-eq-Wsk" id="sKL-z0-znl">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1GH-xI-zpX" id="85B-VV-Zuj"/>
+                            <outlet property="delegate" destination="1GH-xI-zpX" id="bUn-EK-cX7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="15s-Ut-nlL">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="BOe-SJ-Kku">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="LYj-5P-19X">
                             <rect key="frame" x="96" y="7" width="128" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Input"/>
                                 <segment title="Query"/>
                             </segments>
+                            <connections>
+                                <action selector="didClickSegmentedControl:" destination="1GH-xI-zpX" eventType="valueChanged" id="pic-1N-cm4"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VLy-m9-Xbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ts-EG-77z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="717"/>
+            <point key="canvasLocation" x="378" y="769"/>
         </scene>
         <!--Recorder View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -68,34 +81,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ih-H4-aut">
-                                <rect key="frame" x="43" y="90" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" title="End Recording"/>
-                                <connections>
-                                    <action selector="didTouchRecordButton:" destination="vXZ-lx-hvc" eventType="touchDown" id="h6u-P5-jmU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-cC-AwD">
-                                <rect key="frame" x="216" y="89" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didClickPlayButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vAX-js-gTM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="34" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="221" translatesAutoresizingMaskIntoConstraints="NO" id="xGi-FK-7Iw">
-                                <rect key="frame" x="56" y="184" width="221" height="244"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p27-yb-J0a">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Record" style="plain" id="HAg-Gi-f08">
+                                        <connections>
+                                            <action selector="didTouchRecordButton:" destination="vXZ-lx-hvc" id="lRn-xU-2Tm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cEz-81-pM4"/>
+                                    <barButtonItem title="Play" style="plain" id="9j0-3A-xTh">
+                                        <connections>
+                                            <action selector="didClickPlayButton:" destination="vXZ-lx-hvc" id="PsX-t1-uMB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -108,14 +110,16 @@
                                 <segment title="Input"/>
                                 <segment title="Query"/>
                             </segments>
+                            <connections>
+                                <action selector="didClickSegmentedControl:" destination="vXZ-lx-hvc" eventType="valueChanged" id="IJU-Xi-Juj"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="playButton" destination="vbQ-cC-AwD" id="AP2-Ls-fnN"/>
-                        <outlet property="recordButton" destination="9Ih-H4-aut" id="4zQ-HI-4bx"/>
-                        <outlet property="resultLabel" destination="xGi-FK-7Iw" id="7gJ-JV-ZdP"/>
+                        <outlet property="playBarButton" destination="9j0-3A-xTh" id="KcE-qy-kBK"/>
+                        <outlet property="recordBarButton" destination="HAg-Gi-f08" id="F85-l2-C8P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -147,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="z9v-8W-7jh" kind="relationship" relationship="rootViewController" id="5ur-Ew-gR8"/>
+                        <segue destination="1GH-xI-zpX" kind="relationship" relationship="rootViewController" id="xRE-P1-RwT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9n-qg-vwL" userLabel="First Responder" sceneMemberID="firstResponder"/>

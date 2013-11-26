@@ -12,11 +12,10 @@
 
 @interface DBRecorderViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *recordButton;
-@property (weak, nonatomic) IBOutlet UIButton *playButton;
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
-@property (strong, nonatomic) NSMutableData *data;
-@property (strong, nonatomic) AVAudioPlayer *player;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *recordBarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *playBarButton;
+@property (strong, nonatomic) NSMutableData *audioData;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -47,26 +46,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)didTouchRecordButton:(UIButton *)sender
+#pragma mark - Actions
+
+- (IBAction)didClickSegmentedControl:(UISegmentedControl *)sender {
+    UITabBarController *tabBarController = (UITabBarController *)[[UIApplication sharedApplication].delegate window].rootViewController;
+    tabBarController.selectedIndex = 1;
+    sender.selectedSegmentIndex = 0;
+}
+
+- (IBAction)didTouchRecordButton:(UIBarButtonItem *)sender
 {
-    sender.selected = !sender.selected;
-    if (sender.selected) {
+    BOOL selected = [sender.title isEqualToString:@"Record"];
+    sender.title = selected ? @"Finish" : @"Record";
+    if (selected) {
         [self.recognizer start];
     } else {
         [self.recognizer stop];
     }
 }
 
-- (IBAction)didClickPlayButton:(UIButton *)sender
+- (IBAction)didClickPlayButton:(UIBarButtonItem *)sender
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
-        void *pcm = (void *)malloc(self.data.length);
-        [self.data getBytes:pcm];
-        playbuffer(pcm, self.data.length);
+        void *pcm = (void *)malloc(self.audioData.length);
+        [self.audioData getBytes:pcm];
+        playbuffer(pcm, self.audioData.length);
         free(pcm);
     });
 }
+
+#pragma mark USCRecognizerDelegate
 
 - (void)onStart
 {
@@ -75,11 +85,10 @@
 
 - (void)onResult:(NSString *)result isLast:(BOOL)isLast {
     if (result && result.length > 0) {
-        self.resultLabel.text = result;
-        [DBNetworkManager uploadAudio:self.data completeSemantic:result];
+        [DBNetworkManager uploadAudio:self.audioData completeSemantic:result];
     } else {
         // upload user data success
-        self.resultLabel.text = @"Something went wrong!";
+        // self.resultLabel.text = @"Something went wrong!";
     }
 }
 
@@ -88,17 +97,21 @@
     
 }
 
+- (void)onUploadUserData:(NSError *)error {
+    
+}
+
 - (void)onUpdateVolume:(double)volume {
     
 }
 
 - (void)onVADTimeout {
-    self.recordButton.selected = NO;
+    self.recordBarButton.title = @"Record";
     [self.recognizer stop];
 }
 
 - (void)onRecordingStop:(NSMutableData *)recordingDatas {
-    self.data = recordingDatas;
+    self.audioData = recordingDatas;
 }
 
 + (void)openSpeaker:(bool)bOpen {
@@ -117,32 +130,32 @@
     
 	if(error == kAudioSessionNotInitialized)
 	{
-		NSLog(@"not init");
+		NSLog(@"not init 1");
 	}
 	else if(kAudioSessionAlreadyInitialized)
 	{
-		NSLog(@"not init");
+		NSLog(@"not init 2");
 	}
 	else if(kAudioSessionInitializationError)
 	{
-		NSLog(@"not init");
+		NSLog(@"not init 3");
 	}
 	else if(kAudioSessionUnsupportedPropertyError)
 	{
-		NSLog(@"not init");
+		NSLog(@"not init 4");
 	}
 	else if(kAudioSessionBadPropertySizeError)
 	{
-		NSLog(@"not init");
+		NSLog(@"not init 5");
 	}
 	else if(kAudioSessionBadPropertySizeError)
 	{
-		NSLog(@"not init");
+		NSLog(@"not init 6");
 	}
 	
 	if(error!=kAudioServicesNoError)
 	{
-		NSLog(@"error");
+		NSLog(@"error 7");
 	}
 }
 
