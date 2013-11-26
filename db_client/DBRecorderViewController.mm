@@ -8,6 +8,7 @@
 
 #import "DBRecorderViewController.h"
 #include "pcmplayer.h"
+#import "DBNetworkManager.h"
 
 @interface DBRecorderViewController ()
 
@@ -72,15 +73,13 @@
     //录音初始化完成，关闭初始化动画
 }
 
-- (void)onResult:(NSString *)result isLast:(BOOL)isLast
-{
-    if (result) {
-        // upload user data error
-        NSLog(@"%@", result);
+- (void)onResult:(NSString *)result isLast:(BOOL)isLast {
+    if (result && result.length > 0) {
         self.resultLabel.text = result;
+        [DBNetworkManager uploadAudio:self.data completeSemantic:result];
     } else {
         // upload user data success
-        NSLog(@"Succeeded!");
+        self.resultLabel.text = @"Something went wrong!";
     }
 }
 
@@ -89,30 +88,16 @@
     
 }
 
-- (void)onUpdateVolume:(double)volume
-{
+- (void)onUpdateVolume:(double)volume {
     
 }
 
-- (void)onVADTimeout
-{
+- (void)onVADTimeout {
+    self.recordButton.selected = NO;
     [self.recognizer stop];
-    
 }
 
-- (void)onUploadUserData:(NSError *)error
-{
-    if (error) {
-        // upload user data error
-        NSLog(@"%@", error);
-    } else {
-        // upload user data success
-        NSLog(@"Succeeded!");
-    }
-}
-
-- (void)onRecordingStop:(NSMutableData *)recordingDatas
-{
+- (void)onRecordingStop:(NSMutableData *)recordingDatas {
     self.data = recordingDatas;
 }
 

@@ -37,6 +37,7 @@
 		E138A99018445D2900332D2E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E138A98E18445D2900332D2E /* InfoPlist.strings */; };
 		E138A99218445D2900332D2E /* db_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E138A99118445D2900332D2E /* db_clientTests.m */; };
 		E138A99D1844655D00332D2E /* DBRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E138A99C1844655D00332D2E /* DBRootTabBarController.m */; };
+		E15192061844C1ED00B6E8AD /* DBNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E15192051844C1ED00B6E8AD /* DBNetworkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		E138A99118445D2900332D2E /* db_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = db_clientTests.m; sourceTree = "<group>"; };
 		E138A99B1844655D00332D2E /* DBRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBRootTabBarController.h; sourceTree = "<group>"; };
 		E138A99C1844655D00332D2E /* DBRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRootTabBarController.m; sourceTree = "<group>"; };
+		E15192041844C1ED00B6E8AD /* DBNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBNetworkManager.h; sourceTree = "<group>"; };
+		E15192051844C1ED00B6E8AD /* DBNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBNetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,8 @@
 				E138A99C1844655D00332D2E /* DBRootTabBarController.m */,
 				E105520B1844AAD700D00BD4 /* pcmplayer.cpp */,
 				E105520C1844AAD700D00BD4 /* pcmplayer.h */,
+				E15192041844C1ED00B6E8AD /* DBNetworkManager.h */,
+				E15192051844C1ED00B6E8AD /* DBNetworkManager.m */,
 			);
 			path = db_client;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				E105520318449AE200D00BD4 /* AFSecurityPolicy.m in Sources */,
 				E138A97718445D2900332D2E /* DBAppDelegate.m in Sources */,
 				E105520018449AE200D00BD4 /* AFHTTPRequestOperationManager.m in Sources */,
+				E15192061844C1ED00B6E8AD /* DBNetworkManager.m in Sources */,
 				E105520418449AE200D00BD4 /* AFURLConnectionOperation.m in Sources */,
 				E10551FF18449AE200D00BD4 /* AFHTTPRequestOperation.m in Sources */,
 				E138A99D1844655D00332D2E /* DBRootTabBarController.m in Sources */,
