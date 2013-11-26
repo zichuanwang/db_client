@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "USCRecognizer.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface DBRecorderViewController : UIViewController <USCRecognizerDelegate>
 

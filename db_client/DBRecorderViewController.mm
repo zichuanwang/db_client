@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (strong, nonatomic) NSMutableData *data;
+@property (strong, nonatomic) AVAudioPlayer *player;
 
 @end
 
@@ -53,7 +55,17 @@
 
 - (IBAction)didClickPlayButton:(UIButton *)sender
 {
-
+  if (self.data) {
+//    NSString *urlString = [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
+//    NSURL *url = [[NSURL alloc] initWithString:urlString];
+//    
+//    NSData *wavDATA = [NSData dataWithContentsOfURL:url];
+    NSError *error;
+    
+    self.player = [[AVAudioPlayer alloc] initWithData:self.data error:&error];
+    self.player.volume = 1.0;
+    [self.player play];
+  }
 }
 
 - (void)onStart
@@ -102,7 +114,7 @@
 
 - (void)onRecordingStop:(NSMutableData *)recordingDatas
 {
-  
+  self.data = recordingDatas;
 }
 
 @end
