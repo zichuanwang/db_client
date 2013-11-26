@@ -52,7 +52,7 @@
 
 - (IBAction)didClickPlayButton:(UIButton *)sender
 {
-  
+
 }
 
 - (void)onStart
@@ -62,7 +62,13 @@
 
 - (void)onResult:(NSString *)result isLast:(BOOL)isLast
 {
-
+  if (result) {
+    // upload user data error
+    NSLog(@"%@", result);
+  }else{
+    // upload user data success
+    NSLog(@"Succeeded!");
+  }
 }
 
 - (void)onEnd:(NSError *)error
